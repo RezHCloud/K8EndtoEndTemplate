@@ -1,4 +1,4 @@
-name: Build,Analyze,scan
+name: Push to Live
 
 on:
   push:

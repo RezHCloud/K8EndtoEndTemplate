@@ -8,7 +8,7 @@ on:
 
 
 jobs:
-  build-analyze-scan:
+  build-analyse-scan:
     name: Build
     runs-on: [self-hosted]
     steps:
@@ -41,7 +41,7 @@ jobs:
         run: trivy image ${{ secrets.DOCKERHUB_USERNAME }}/K8s:latest > trivyimage.txt
 
   deploy:
-   needs: build-analyze-scan   
+   needs: build-analyse-scan   
    runs-on: [self-hosted]
    steps:
       - name: docker pull image

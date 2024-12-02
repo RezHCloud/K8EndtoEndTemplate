@@ -5,19 +5,22 @@ FROM node:16
 WORKDIR /app
 
 # Copy package.json and package-lock.json to the container
-COPY package.json /app/
+COPY package*.json ./
 
 # Install project dependencies
 RUN npm install
 
 # Copy the entire project files to the container
-COPY . /app/
+COPY . .
 
-# Build the Next.js application for production
+# Build the React application for production
 RUN npm run build
 
-# Expose the port used by your Next.js app (if needed)
+# Install a lightweight static server (serve) globally
+RUN npm install -g serve
+
+# Expose port 3000 (to match your Kubernetes configuration)
 EXPOSE 3000
 
-# Define the default command to start the Next.js app
-CMD ["npm", "start"]
+# Start the React app on port 3000
+CMD ["serve", "-s", "build", "-l", "3000"]

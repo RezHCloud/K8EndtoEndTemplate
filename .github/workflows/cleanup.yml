@@ -6,7 +6,7 @@ on:
       #- main
 jobs:
   destroy:
-    name: Build
+    name: destroy
     runs-on: [self-hosted]
     steps:
       - name: Checkout code

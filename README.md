@@ -5,3 +5,5 @@ This is the accompanying repo for the live follow along.
 
 ## How this Repo works? 
 NOTE: Please deploy the EC2 Runner Repo first before using this repo
+
+Change it to what an employer would want to see
